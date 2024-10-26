@@ -129,7 +129,7 @@ const experiences = [
     ],
   },
   {
-    title: "Web Development/Design Intern",
+    title: "Web Developer/Design Intern",
     company_name: "The Sparks Foundation",
     icon: tesla,
     iconBg: "#E6DEDD",
