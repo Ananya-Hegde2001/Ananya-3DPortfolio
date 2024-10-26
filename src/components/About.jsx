@@ -23,11 +23,12 @@ const ServiceCard = ({ index, title, icon }) => {
           duration: 0.3
         }
       }}
-      onHoverStart={() => setIsHovered(true)} // Bump effect on hover
-      onHoverEnd={() => setIsHovered(false)} // Reset on hover end
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      className="w-full sm:w-[250px]" // Responsive width
     >
       <Tilt
-        className="xs:w-[250px] w-full"
+        className="w-full"
         tiltMaxAngleX={45}
         tiltMaxAngleY={45}
         perspective={800}
@@ -45,7 +46,6 @@ const ServiceCard = ({ index, title, icon }) => {
           className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card cursor-pointer"
         >
           <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col relative overflow-hidden">
-            {/* Bump effect overlay */}
             <AnimatePresence>
               {isHovered && (
                 <motion.div
@@ -58,7 +58,6 @@ const ServiceCard = ({ index, title, icon }) => {
               )}
             </AnimatePresence>
 
-            {/* Icon with floating animation */}
             <motion.div
               animate={{
                 y: [0, -8, 0],
@@ -77,7 +76,6 @@ const ServiceCard = ({ index, title, icon }) => {
               />
             </motion.div>
 
-            {/* Title */}
             <motion.h3
               className="text-white text-[22px] font-bold text-center relative z-10"
               whileHover={{ scale: 1.1 }}
@@ -86,7 +84,6 @@ const ServiceCard = ({ index, title, icon }) => {
               {title}
             </motion.h3>
 
-            {/* Background gradient effect */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-cyan-500/20"
               animate={{
@@ -128,7 +125,7 @@ const About = () => {
         where technology empowers and transforms!
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
