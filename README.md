@@ -34,6 +34,6 @@ By developing this project, I have gained hands-on experience in crafting immers
 
 and many more, including code architecture and reusability 
 
-<a href="https://ananya-3dportfolio.vercel.app" target="_blank" style="font-size: 24px; text-align: center; display: block;">Visit My Website</a>
+<h2 align="center"><a href="https://ananya-3dportfolio.vercel.app" target="_blank">Visit My Website</a></h2>
 
 
