@@ -10,18 +10,14 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Ball = ({ imgUrl, isMobile }) => {
-  const [decal] = useTexture([imgUrl]);
+const Ball = (props) => {
+  const [decal] = useTexture([props.imgUrl]);
 
   return (
-    <Float 
-      speed={1.75} 
-      rotationIntensity={isMobile ? 0.5 : 1} 
-      floatIntensity={isMobile ? 1 : 2} // Reduced intensity for mobile
-    >
+    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={isMobile ? 1.75 : 2.75}> {/* Smaller on mobile */}
+      <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
           color='#fff8eb'
@@ -42,17 +38,15 @@ const Ball = ({ imgUrl, isMobile }) => {
 };
 
 const BallCanvas = ({ icon }) => {
-  const isMobile = window.innerWidth <= 768;
-
   return (
     <Canvas
-      frameloop={isMobile ? 'always' : 'demand'}
-      dpr={[1, isMobile ? 1.5 : 2]} // Adjust dpr for mobile
+      frameloop='demand'
+      dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} isMobile={isMobile} />
+        <Ball imgUrl={icon} />
       </Suspense>
 
       <Preload all />
