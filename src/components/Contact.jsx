@@ -13,6 +13,20 @@ const socialLinks = [
   { href: "https://ananyamca.blogspot.com", icon: <FaBlogger />, label: "Blog" },
   { href: "https://x.com/HegdeAnany49037", icon: <FaTwitter />, label: "Twitter" },
   { href: "https://github.com/Ananya-Hegde2001", icon: <FaGithub />, label: "GitHub" },
+  {
+    href: "https://drive.google.com/file/d/18kau8gC-E-rkYXpl6aAymiYD-wbSxqGO/view?usp=sharing", // Replace YOUR_RESUME_ID with your actual Drive file ID
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="w-5 h-5"
+      >
+        <path d="M6 2C4.89 2 4 2.89 4 4v16c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5zM6 20V4h6v5h5v11H6zm3-9h6v2H9v-2zm0 4h6v2H9v-2z" />
+        </svg>
+    ),
+    label: "Resume",
+  },
 ];
 
 const Contact = () => {
